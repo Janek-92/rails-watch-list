@@ -13,9 +13,11 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(lists_params)
+    @movie = Movie.find(params[:movie_id])
+    @list.movie = @movie
     @list.save
 
-    redirect_to list_path(@list)
+    redirect_to movie_path(@movie)
   end
 
   def edit
