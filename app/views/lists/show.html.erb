@@ -1,0 +1,10 @@
+<h1>All your lists</h1>
+<p><%= @list.name %></p>
+<%= link_to 'Back', lists_path %>
+<%= link_to 'Leave a comment', new_list_bookmark_path(@list) %>
+
+<ul class="list-group">
+  <% @list.bookmark.each do |review| %>
+    <li class="list-group-item"><%= bookmark.comment %></li>
+  <% end %>
+</ul>

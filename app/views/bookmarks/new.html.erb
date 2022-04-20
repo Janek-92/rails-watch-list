@@ -1,5 +1,5 @@
-<%= simple_form_for [ @list, @bookmark ] do |f| %>
-  <%= f.input :comment, placeholder "Write a comment" %>
-  <%= f.association :movie %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%=  f.association :movie, collection: Movie.all.order(:title), prompt: "Select a movie", input_html: { data: { controller: "slect2" } } %>
+  <%= f.input :comment, placeholder: "Enter a comment about the movie" %>
+  <%= f.submit "Add movie", class: "btn btn-flat" %>
+  <% end %>

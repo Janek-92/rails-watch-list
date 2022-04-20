@@ -1,4 +1,5 @@
-<%= simple_form_for [ @movie, @list ] do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<h1>Create Your List</h1>
+<%= simple_form_for (@list) do |f| %>
+  <%= f.input :name %>
+  <%= f.submit "Create list", class: "btn btn-primary" %>
 <% end %>
